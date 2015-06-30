@@ -55,6 +55,4 @@ docs/_build/
 
 # PyBuilder
 target/
-
-# project files
-*.xml
+.xml

@@ -11,4 +11,3 @@ server.server_terminate()
 
 diodes.setup_GPIO()
 diodes.blink_diode(data)
-

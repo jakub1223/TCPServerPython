@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import time
 
 
+
 def setup_GPIO():
     print('set')
     #GPIO.setmode(GPIO.BCM)
@@ -16,8 +17,6 @@ def blink_diode(message):
     print('message length: {0}\nreference: {1}'.format(len(message), len(reference)))
     if message == reference:
         set_diode()
-    else:
-        make_blink()
 
 
 def set_diode():
@@ -34,3 +33,13 @@ def make_blink():
     #    time.sleep(0.5)
     #    LED = not LED
     #    i += 1
+
+
+def make_blink():
+    LED = True
+    i = 0
+    while i < 10:
+        GPIO.output(18, LED)
+        time.sleep(0.5)
+        LED = not LED
+        i += 1

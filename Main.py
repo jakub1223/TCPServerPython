@@ -9,6 +9,6 @@ data = server.server_receive_data()
 server.server_terminate()
 
 
-diodes.setupGPIO()
+diodes.setup_GPIO()
 diodes.blink_diode(data)
 

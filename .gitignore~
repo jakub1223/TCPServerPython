@@ -55,9 +55,5 @@ docs/_build/
 
 # PyBuilder
 target/
-<<<<<<< HEAD
-
-# project files
-*.xml
-=======
->>>>>>> 7f9bf37a971e4919602ce6121702ff8c1cf1b3b2
+.idea
+.idea

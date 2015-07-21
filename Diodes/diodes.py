@@ -10,9 +10,11 @@ def setup_GPIO():
 
 def blink_diode(message):
     reference = 'Hello world!\n'
-    print('message length: {0}\nreference: {1}'.format(len(message), len(reference)))
+    print('message: {0}'.format(message))
     if message == reference:
         set_diode()
+    else:
+        make_blink()
 
 
 def set_diode():

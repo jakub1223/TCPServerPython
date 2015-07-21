@@ -3,12 +3,21 @@
 import Diodes.diodes as diodes
 import Server.server as server
 
-message_to_send = 'Hello from python'
-server.init()
-data = server.receive_data()
-server.send_data(message_to_send)
-server.terminate()
+
+def setup():
+    server.init()
+    diodes.setup_GPIO()
 
 
-diodes.setup_GPIO()
-diodes.blink_diode(data)
+def loop():
+
+    message_to_send = 'Hello from python'
+
+    data = server.receive_data()
+    server.send_data(message_to_send)
+    diodes.blink_diode(data)
+
+    server.terminate()
+
+setup()
+loop()

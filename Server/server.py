@@ -7,12 +7,11 @@ conn = 0.0
 address = 0.0
 
 
-def server_init():
+def init():
     global conn
     global address
-
-    HOST = '192.168.1.2'
-    PORT = 12345
+    global HOST
+    global PORT
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((HOST, PORT))
@@ -20,16 +19,12 @@ def server_init():
     conn, address = s.accept()
 
 
-def server_receive_data():
+def receive_data():
+    global conn
     data = conn.recv(1024)
     return data
 
 
-def server_terminate():
+def terminate():
     global conn
     conn.close()
-
-    data = conn.recv(1024)
-    conn.close()
-
-    return data

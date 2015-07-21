@@ -1,6 +1,3 @@
-__author__ = 'gonczor'
-
-
 import RPi.GPIO as GPIO
 import time
 

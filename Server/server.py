@@ -25,6 +25,11 @@ def receive_data():
     return data
 
 
+def send_data(data_to_send):
+    global conn
+    conn.sendall(bytearray(data_to_send, "utf-8"))
+
+
 def terminate():
     global conn
     conn.close()

@@ -55,5 +55,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#other
 .idea
 RPi
+data_file

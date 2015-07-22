@@ -5,7 +5,6 @@ import Diodes.diodes as diodes
 import Server.server as server
 import subprocess
 import threading
-import time
 
 
 def setup():
@@ -13,35 +12,33 @@ def setup():
     diodes.setup_GPIO()
 
 
-def loop():
-
-    message_to_send = 'Hello from python'
-
-    data = server.receive_data()
-    server.send_data(message_to_send)
-    diodes.blink_diode(data)
-
-    server.terminate()
-
-
 class DataGatheringAndStorage(threading.Thread):
     def run(self):
         #debug and developement purposes. will handle microcontroller UART conneciton
         #and data storage
         subprocess.call('bash Bash/bash_data_handle.sh write', shell=True)
+        diodes.blink_diode()
 
 
 class WebService(threading.Thread):
     def run(self):
         #debug and developement purposes. will handle web connections
-        time.sleep(1)
-        print('pong')
+        message_to_send = 'Hello from python'
 
+        data = server.receive_data()
+        #TODO received data handling
+        server.send_data(message_to_send)
+        server.terminate()
+
+
+#main flow here
+
+setup()
+
+#TODO this needs to be in a loop
 
 data_gathering_thread = DataGatheringAndStorage()
 web_storage_thread = WebService()
 data_gathering_thread.start()
 web_storage_thread.start()
 
-#setup()
-#loop()

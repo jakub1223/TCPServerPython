@@ -1,8 +1,6 @@
 #!/bin/sh
 
 
-echo pong!
-
 #This is a temporary solution. A bash script will be called to
 #deal with data and administrate the server
 
@@ -23,6 +21,7 @@ if [ $1 = write ]; then
 
 elif [ $1 = read ]; then
     read_file
+
 else
     echo command unknown
     exit 1

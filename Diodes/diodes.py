@@ -8,13 +8,9 @@ def setup_GPIO():
     #GPIO.setup(18, GPIO.OUT)
 
 
-def blink_diode(message):
-    reference = 'Hello world!\n'
-    print('message: {0}'.format(message))
-    if message == reference:
-        set_diode()
-    else:
-        make_blink()
+def blink_diode():
+    set_diode()
+    make_blink()
 
 
 def set_diode():
@@ -32,12 +28,3 @@ def make_blink():
     #    LED = not LED
     #    i += 1
 
-
-def make_blink():
-    LED = True
-    i = 0
-    while i < 10:
-        GPIO.output(18, LED)
-        time.sleep(0.5)
-        LED = not LED
-        i += 1

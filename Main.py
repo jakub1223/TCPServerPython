@@ -34,7 +34,8 @@ class DataGatheringAndStorage(threading.Thread):
 class WebService(threading.Thread):
     def run(self):
         #debug and developement purposes. will handle web connections
-        subprocess.call('bash Bash/temp.sh', shell=True)
+        time.sleep(1)
+        print('pong')
 
 
 data_gathering_thread = DataGatheringAndStorage()

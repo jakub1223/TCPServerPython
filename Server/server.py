@@ -1,7 +1,7 @@
 import socket
 
 
-HOST = '127.0.0.1'  #192.168.1.2
+HOST = '127.0.0.1' #''192.168.1.2
 PORT = 12345
 conn = 0.0
 address = 0.0
